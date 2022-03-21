@@ -1,0 +1,37 @@
+print("""
+***************
+ATM PROGRAMI
+***************
+
+İşlemler:
+1-Bakiye Sorgulama
+2-Para Yatırma
+3-Para Çekme
+
+***Programdan Çıkmak İçin "x" tuşuna basınız.***
+""")
+
+bakiye=2000
+
+while True:
+    işlem=input("Lütfen Yapmak İstediğiniz İşlemi Seçiniz:")
+    if (işlem == "x"):
+        print("Tekrar bekleriz...")
+        break
+        
+    elif (işlem == "1"):
+        print("Bakiyeniz {} TL'dir.".format(bakiye))
+        
+    elif (işlem == "2"):
+        miktar=int(input("Lütfen miktar giriniz:"))
+        bakiye+=miktar
+        
+    elif (işlem == "3"):
+        miktar=int(input("Lütfen Çekmek İstediğiniz Miktarı Giriniz:"))
+        if (bakiye - miktar < 0):
+            print("Çekmek İstediğiniz Miktarı Veremiyoruz.")
+            continue
+        bakiye -= miktar
+    else:
+        print("Geçersiz İşlem Yaptınız... Lütfen Daha Sonra Tekrar Deneyiniz...")
+        break
